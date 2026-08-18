@@ -52,47 +52,10 @@ the first question to take back to the client's data team.
 - Customers split into seven RFM segments — `<insert the corrected segment
   table here after re-running>`
 
-## Repository layout
-
-```
-ecommerce-sales-customer-analytics/
-├── README.md
-├── requirements.txt
-├── LICENSE
-├── .gitignore
-├── notebooks/
-│   └── ecommerce_sales_customer_analytics.ipynb
-├── data/
-│   ├── raw/                 # customers.csv, orders.csv, order_items.csv, products.csv
-│   └── README.md            # provenance + licence for the data
-├── sql/                     # each analysis query as a standalone .sql file
-│   ├── 01_data_quality_checks.sql
-│   ├── 02_revenue_and_status.sql
-│   ├── 03_monthly_trend.sql
-│   ├── 04_product_category_performance.sql
-│   ├── 05_country_category.sql
-│   └── 06_rfm_segmentation.sql
-└── outputs/
-    ├── dashboard.html       # exported Plotly dashboard
-    └── charts/              # exported PNGs used in this README
-```
-
 Splitting the SQL out into `sql/` matters more than it looks: it is the fastest
 way for a reviewer to see the actual query craft without opening a notebook,
 and it is the part of this repo a hiring manager will skim first.
 
-## Running it
-
-```bash
-git clone https://github.com/techemayo/ecommerce-sales-customer-analytics.git
-cd ecommerce-sales-customer-analytics
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-jupyter lab notebooks/ecommerce_sales_customer_analytics.ipynb
-```
-
-The notebook builds `sales.db` from the CSVs on first run; no external database
-is required.
 
 ## Method notes
 
@@ -123,5 +86,5 @@ produces equivalent synthetic data and keep the repo self-contained.>`
 
 ## Licence
 
-MIT — see [LICENSE](LICENSE). Note that the code licence does not cover the
+MIT see [LICENSE](LICENSE). Note that the code licence does not cover the
 dataset; the dataset's own terms apply.
